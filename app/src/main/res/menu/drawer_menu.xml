@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Home Section -->
     <group android:id="@+id/group_home">
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home_paw"
-            android:title="Home"
-            app:iconTint="#F9FAFB"/>
+            android:title="Home" />
     </group>
 
     <!-- Main Menu Section -->
@@ -16,20 +14,17 @@
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_profile"
-            android:title="My Profile"
-            app:iconTint="#F9FAFB"/>
+            android:title="My Profile" />
 
         <item
             android:id="@+id/nav_messages"
             android:icon="@drawable/ic_messages"
-            android:title="Messages"
-            app:iconTint="#F9FAFB"/>
+            android:title="Messages" />
 
         <item
             android:id="@+id/nav_notifications"
             android:icon="@drawable/ic_notifications"
-            android:title="Notifications"
-            app:iconTint="#F9FAFB"/>
+            android:title="Notifications" />
     </group>
 
     <!-- Settings Section -->
@@ -37,22 +32,20 @@
         <item
             android:id="@+id/nav_settings"
             android:title="Settings"
-            android:icon="@drawable/ic_settings"
-            app:iconTint="#F9FAFB">
-            <menu>
-                <item
-                    android:id="@+id/nav_account_settings"
-                    android:title="Account Settings"/>
-                <item
-                    android:id="@+id/nav_privacy"
-                    android:title="Privacy"/>
-                <item
-                    android:id="@+id/nav_logout"
-                    android:icon="@drawable/ic_logout"
-                    android:title="Logout"
-                    app:iconTint="#F9FAFB"/>
-            </menu>
-        </item>
+            android:icon="@drawable/ic_settings" />
+            
+        <item
+            android:id="@+id/nav_account_settings"
+            android:title="Account Settings" />
+            
+        <item
+            android:id="@+id/nav_privacy"
+            android:title="Privacy" />
+            
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="Logout" />
     </group>
 
     <!-- Help Section -->
@@ -60,13 +53,11 @@
         <item
             android:id="@+id/nav_help"
             android:icon="@drawable/ic_help"
-            android:title="Help Center"
-            app:iconTint="#F9FAFB"/>
+            android:title="Help Center" />
 
         <item
             android:id="@+id/nav_about"
             android:icon="@drawable/ic_info"
-            android:title="About PupChat"
-            app:iconTint="#F9FAFB"/>
+            android:title="About PupChat" />
     </group>
 </menu>
