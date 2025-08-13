@@ -145,7 +145,6 @@
         app:itemTextColor="#F9FAFB"
         app:itemIconTint="#F9FAFB"
         app:itemShapeFillColor="#374151"
-        app:itemShapeCornerSize="8dp"
         app:itemHorizontalPadding="16dp"
         app:itemVerticalPadding="12dp"/>
 
