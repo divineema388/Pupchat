@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#111827"
+    android:fillViewport="true"
+    tools:context=".VerificationPendingActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/ic_email_verified"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verify Your Email"
+            android:textColor="#F9FAFB"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="We've sent a verification email to:"
+            android:textColor="#9CA3AF"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/textViewEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#6366F1"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please check your inbox and verify your email address to continue."
+            android:textColor="#9CA3AF"
+            android:textSize="16sp"
+            android:layout_marginBottom="32dp"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/buttonResend"
+            style="@style/Widget.Pupchat.Button.Outline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Resend Verification Email"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/buttonCheckVerified"
+            style="@style/Widget.Pupchat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="I've Verified My Email"/>
+
+    </LinearLayout>
+</ScrollView>

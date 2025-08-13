@@ -1,0 +1,17 @@
+pluginManagement {
+  repositories {
+    gradlePluginPortal()
+    google()
+    mavenCentral()
+  }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)  // Add this
+    repositories {
+        mavenCentral()
+    }
+}
+rootProject.name = "Pupchat"
+
+include(":app")

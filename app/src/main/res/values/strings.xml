@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">PupChat</string>
+    <string name="verification_pending_title">Verify Your Email</string>
+<string name="verification_pending_message">We\'ve sent a verification email to:</string>
+<string name="verification_instructions">Please check your inbox and verify your email address to continue.</string>
+<string name="resend_verification">Resend Verification Email</string>
+<string name="verified_button">I\'ve Verified My Email</string>
+<string name="email_not_verified">Please verify your email first</string>
+<string name="verification_email_sent">Verification email sent. Please check your inbox.</string>
+    <!-- Login Activity -->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="dont_have_account_register">Don\'t have an account? Register</string>
+    
+    <!-- Register Activity -->
+    <string name="name">Full Name</string>
+    <string name="register">Register</string>
+    <string name="already_have_account_login">Already have an account? Login</string>
+    
+    <!-- Home Activity -->
+    <string name="welcome">Welcome</string>
+    <string name="logout">Logout</string>
+    
+    <!-- Validation Messages -->
+    <string name="name_required">Name is required</string>
+    <string name="email_required">Email is required</string>
+    <string name="valid_email">Please enter a valid email</string>
+    <string name="password_required">Password is required</string>
+    <string name="password_length">Minimum password length is 6 characters</string>
+    <string name="forgot_password">Forgot Password?</string>
+<string name="reset_password">Reset Password</string>
+<string name="send_reset_link">Send Reset Link</string>
+<string name="reset_instructions">Enter your email to receive a reset link</string>
+    
+    <!-- Notification -->
+    <string name="default_notification_channel_id">default_channel</string>
+</resources>
