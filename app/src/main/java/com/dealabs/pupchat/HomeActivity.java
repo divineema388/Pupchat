@@ -13,9 +13,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -30,7 +34,18 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    // Navigation constants
+    private static final int NAV_HOME = R.id.nav_home;
+    private static final int NAV_PROFILE = R.id.nav_profile;
+    private static final int NAV_MESSAGES = R.id.nav_messages;
+    private static final int NAV_NOTIFICATIONS = R.id.nav_notifications;
+    private static final int NAV_ACCOUNT_SETTINGS = R.id.nav_account_settings;
+    private static final int NAV_PRIVACY = R.id.nav_privacy;
+    private static final int NAV_LOGOUT = R.id.nav_logout;
+    private static final int NAV_HELP = R.id.nav_help;
+    private static final int NAV_ABOUT = R.id.nav_about;
 
     private TextView textViewWelcome;
     private TextView textViewEmail;
@@ -39,6 +54,8 @@ public class HomeActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
     private String userName = "";
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,19 +70,60 @@ public class HomeActivity extends AppCompatActivity {
         textViewEmail = findViewById(R.id.textViewEmail);
         editTextPost = findViewById(R.id.editTextPost);
         linearLayoutPosts = findViewById(R.id.linearLayoutPosts);
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+
+        // Set up navigation drawer
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
 
         // Set up post button
         findViewById(R.id.buttonPost).setOnClickListener(v -> createPost());
 
         loadUserData();
         loadPosts();
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
         
-        // Logout button click listener
-        findViewById(R.id.buttonLogout).setOnClickListener(v -> {
+        if (id == NAV_HOME) {
+            // Already home
+        } else if (id == NAV_PROFILE) {
+            startActivity(new Intent(this, ProfileActivity.class));
+        } else if (id == NAV_MESSAGES) {
+            startActivity(new Intent(this, MessagesActivity.class));
+        } else if (id == NAV_NOTIFICATIONS) {
+            startActivity(new Intent(this, NotificationsActivity.class));
+        } else if (id == NAV_ACCOUNT_SETTINGS) {
+            startActivity(new Intent(this, AccountSettingsActivity.class));
+        } else if (id == NAV_PRIVACY) {
+            startActivity(new Intent(this, PrivacyActivity.class));
+        } else if (id == NAV_LOGOUT) {
             mAuth.signOut();
             startActivity(new Intent(this, LoginActivity.class));
             finish();
-        });
+        } else if (id == NAV_HELP) {
+            startActivity(new Intent(this, HelpActivity.class));
+        } else if (id == NAV_ABOUT) {
+            startActivity(new Intent(this, AboutActivity.class));
+        }
+        
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            moveTaskToBack(true);
+        }
     }
 
     private void createPost() {
@@ -146,6 +204,10 @@ public class HomeActivity extends AppCompatActivity {
         if (currentUser != null) {
             String userId = currentUser.getUid();
             
+            View headerView = navigationView.getHeaderView(0);
+            TextView navUsername = headerView.findViewById(R.id.textViewNavUsername);
+            TextView navEmail = headerView.findViewById(R.id.textViewNavEmail);
+
             // Set fallback data immediately
             textViewEmail.setText(currentUser.getEmail() != null ? currentUser.getEmail() : "No email");
             textViewWelcome.setText("Welcome!");
@@ -177,6 +239,10 @@ public class HomeActivity extends AppCompatActivity {
                         if (email != null && !email.trim().isEmpty()) {
                             textViewEmail.setText(email);
                         }
+                        
+                        // Set navigation header values
+                        navUsername.setText(userName);
+                        navEmail.setText(currentUser.getEmail());
                     } else {
                         // No data found in database, use FirebaseAuth data
                         String displayName = currentUser.getDisplayName();
@@ -186,6 +252,10 @@ public class HomeActivity extends AppCompatActivity {
                         } else {
                             textViewWelcome.setText("Welcome!");
                         }
+                        
+                        // Set navigation header values
+                        navUsername.setText(userName);
+                        navEmail.setText(currentUser.getEmail());
                     }
                 }
 
@@ -201,6 +271,10 @@ public class HomeActivity extends AppCompatActivity {
                     } else {
                         textViewWelcome.setText("Welcome!");
                     }
+                    
+                    // Set navigation header values
+                    navUsername.setText(userName);
+                    navEmail.setText(currentUser.getEmail());
                 }
             });
         } else {
@@ -218,18 +292,13 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.menu_logout) {
+        if (item.getItemId() == R.id.menu_p) {
             mAuth.signOut();
             startActivity(new Intent(this, LoginActivity.class));
             finish();
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onBackPressed() {
-        moveTaskToBack(true);
     }
 
     @Override

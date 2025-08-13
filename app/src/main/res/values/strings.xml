@@ -35,4 +35,10 @@
     
     <!-- Notification -->
     <string name="default_notification_channel_id">default_channel</string>
+    
+    
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+<string name="navigation_drawer_close">Close navigation drawer</string>
+<string name="nav_header_title">PupChat</string>
+<string name="nav_header_subtitle">Connect with fellow pups</string>
 </resources>

@@ -1,0 +1,27 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="?attr/colorOnSurface">
+    
+    <!-- House shape -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M10,20V14H14V20H19V12H22L12,3 2,12H5V20H10Z"/>
+    
+    <!-- Paw print overlay -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M15.5,15.5C15.78,15.5 16,15.72 16,16S15.78,16.5 15.5,16.5 15,16.28 15,16 15.22,15.5 15.5,15.5Z"/>
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M17.5,15.5C17.78,15.5 18,15.72 18,16S17.78,16.5 17.5,16.5 17,16.28 17,16 17.22,15.5 17.5,15.5Z"/>
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M16.5,17C16.78,17 17,17.22 17,17.5S16.78,18 16.5,18 16,17.78 16,17.5 16.22,17 16.5,17Z"/>
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M16.5,13.5C17.05,13.5 17.5,13.95 17.5,14.5S17.05,15.5 16.5,15.5 15.5,15.05 15.5,14.5 15.95,13.5 16.5,13.5Z"/>
+        
+</vector>

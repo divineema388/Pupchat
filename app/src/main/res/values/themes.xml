@@ -41,6 +41,19 @@
         <item name="textInputStyle">@style/Widget.Pupchat.TextInputLayout</item>
     </style>
     
+    
+    
+    <style name="ShapeAppearance.Pupchat.Circle" parent="">
+    <item name="cornerFamily">rounded</item>
+    <item name="cornerSize">50%</item>
+</style>
+
+<style name="TextAppearance.Pupchat.NavItem" parent="TextAppearance.AppCompat">
+    <item name="android:textSize">14sp</item>
+    <item name="android:textColor">@color/white</item>
+    <item name="fontFamily">@font/sans_serif_medium</item>
+</style>
+
     <!-- Modern Button style with gradient effect -->
     <style name="Widget.Pupchat.Button" parent="Widget.MaterialComponents.Button">
         <item name="android:textColor">@color/white</item>

@@ -4,7 +4,9 @@
     <color name="colorPrimary">#6366F1</color>  <!-- Modern indigo -->
     <color name="colorPrimaryDark">#4F46E5</color>  <!-- Darker indigo -->
     <color name="colorAccent">#8B5CF6</color>  <!-- Purple accent -->
-    
+    <color name="nav_item_icon_color">#F9FAFB</color>
+<color name="nav_item_text_color">#F9FAFB</color>
+<color name="nav_item_background">#374151</color>
     <!-- White and Grayscale -->
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
